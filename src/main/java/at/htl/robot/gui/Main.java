@@ -216,8 +216,10 @@ public class Main extends PApplet {
                 omicron.rotateRight();
             } else if ((key == mode) || (key == mode2)) {
                 omicron.changeMode();
+                theta.changeMode();
             } else if ((key == control) || (key == control2)) {
-                omicron.changeControl();
+                omicron.changeConytrol();
+                theta.changeControl();
             }
             else if (key == stepForwardT) {
                 theta.stepForward();
