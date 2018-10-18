@@ -26,7 +26,7 @@ class RobotTest {
     void stepSouth() {
         Robot robot = new Robot();
 
-        robot.stepForward(Main.fieldBox);
+        robot.stepForward();
 
         assertThat(robot.getX(), is(0));
         assertThat(robot.getY(), is(1));
@@ -88,7 +88,7 @@ class RobotTest {
 
         robot.rotateLeft();
         robot.rotateLeft();
-        robot.stepForward(Main.fieldBox);
+        robot.stepForward();
 
         assertThat(robot.getX(), is(0));
         assertThat(robot.getY(), is(7));
@@ -100,7 +100,7 @@ class RobotTest {
         Robot robot = new Robot();
 
         robot.rotateLeft();
-        robot.stepForward(Main.fieldBox);
+        robot.stepForward();
 
         assertThat("Falscher X-Wert", robot.getX(), is(1));
         assertThat("Falscher y-Wert", robot.getY(), is(0));
@@ -114,7 +114,7 @@ class RobotTest {
         robot.rotateLeft();
         robot.rotateLeft();
         robot.rotateLeft();
-        robot.stepForward(Main.fieldBox);
+        robot.stepForward();
 
         assertThat("Falscher X-Wert", robot.getX(), is(7));
         assertThat("Falscher y-Wert", robot.getY(), is(0));
@@ -126,8 +126,8 @@ class RobotTest {
         Robot robot = new Robot();
 
         robot.rotateLeft();
-        robot.stepForward(Main.fieldBox);
-        robot.stepForward(Main.fieldBox);
+        robot.stepForward();
+        robot.stepForward();
 
         assertThat("Falscher X-Wert", robot.getX(), is(2));
         assertThat("Falscher y-Wert", robot.getY(), is(0));

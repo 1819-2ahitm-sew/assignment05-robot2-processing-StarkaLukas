@@ -1,13 +1,13 @@
 package at.htl.robot.model;
 
-public class Robot {
+public class Robot2{
 
-    private int x = 0;
-    private int y = 0;
+    private Board board = new Board();
+    private int x = board.getFieldBox().length - 1;
+    private int y = board.getFieldBox()[0].length - 1;
     private Direction direction = Direction.SOUTH;
     private Mode mode = Mode.TELEPORT;
     private Control control = Control.FORWARDLEFTRIGHT;
-    private Board board = new Board();
 
     //region Getter and Setter
     public int getX() {
@@ -78,7 +78,7 @@ public class Robot {
                 y = 0;
             }
         }
-        else{
+        else if(mode == Mode.RESTRICT){
             if (x < 0) {
                 x = 0;
             } else if (x >= board.getFieldBox()[0].length) {
@@ -126,7 +126,6 @@ public class Robot {
                 break;
         }
     }
-
     public void changeMode() {
         if (mode == Mode.TELEPORT) {
             mode = Mode.RESTRICT;
