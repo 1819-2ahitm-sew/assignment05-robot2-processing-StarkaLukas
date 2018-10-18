@@ -220,13 +220,22 @@ public class Main extends PApplet {
             } else if ((key == control) || (key == control2)) {
                 omicron.changeControl();
                 theta.changeControl();
-            }
-            else if (key == stepForwardT) {
+            } else if (key == stepForwardT) {
                 theta.stepForward();
             } else if (key == rotateLeftT) {
                 theta.rotateLeft();
             } else if (key == rotateRightT) {
                 theta.rotateRight();
+            }
+            if (key == stepForwardT || key == rotateLeftT || key == rotateRightT) {
+                if (theta.getX() == omicron.getX() && theta.getY() == omicron.getY()) {
+                    theta.stepForward();
+                }
+            }
+            else{
+                if (theta.getX() == omicron.getX() && theta.getY() == omicron.getY()) {
+                    omicron.stepForward();
+                }
             }
         }
         key = '%';
@@ -253,6 +262,9 @@ public class Main extends PApplet {
                     omicron.setDirection(Direction.WEST);
                     omicron.stepForward();
                     break;
+            }
+            if (theta.getX() == omicron.getX() && theta.getY() == omicron.getY()) {
+                omicron.stepForward();
             }
             switch (key) {
                 case 'w':
@@ -287,6 +299,10 @@ public class Main extends PApplet {
                     theta.setDirection(Direction.WEST);
                     theta.stepForward();
                     break;
+
+            }
+            if (theta.getX() == omicron.getX() && theta.getY() == omicron.getY()) {
+                theta.stepForward();
             }
             if ((key == mode) || (key == mode2)) {
                 omicron.changeMode();
